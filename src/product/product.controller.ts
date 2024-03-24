@@ -1,6 +1,16 @@
-import { Controller, Delete, Get, Patch, Post, Put } from '@nestjs/common';
+import {
+  Controller,
+  Delete,
+  Get,
+  Patch,
+  Post,
+  Put,
+  UseGuards,
+} from '@nestjs/common';
+import { RoleGuard } from 'src/auth/guard/role.gurad';
 
 @Controller('product')
+@UseGuards(RoleGuard)
 export class ProductController {
   @Get()
   getProduct() {

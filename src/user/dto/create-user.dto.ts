@@ -1,10 +1,12 @@
-import { IsString } from 'class-validator';
+import { IsAlphanumeric, IsString } from 'class-validator';
 
 export class CreateUserDTO {
   @IsString()
   username: string;
-  @IsString()
+
+  @IsAlphanumeric()
   password: string;
+
   @IsString()
   role: string;
 }

@@ -1,16 +1,6 @@
-import {
-  Controller,
-  Delete,
-  Get,
-  Patch,
-  Post,
-  Put,
-  UseGuards,
-} from '@nestjs/common';
-import { AuthGuard } from 'src/auth/guard/auth.guard';
+import { Controller, Delete, Get, Patch, Post, Put } from '@nestjs/common';
 
 @Controller('product')
-@UseGuards(AuthGuard)
 export class ProductController {
   @Get()
   getProduct() {
